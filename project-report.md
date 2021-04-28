@@ -127,3 +127,60 @@ For this purpose, I included three control elements in the dashboard.
 1. Selection of team - Drop down containing the list of teams in the dataset
 2. Selection of time window - A range slider with upper and lower bounds based on the maximum and minimum year in the dataset
 3. Selection of opposition - Drop down selection containing the list of teams except for the selected team
+
+
+### Team Performance
+I used Win/Loss ratio as the representative value for the team's overall performance during a specific year.
+As the benchmark for comparison, I used the average Win/Loss ratio of all the teams. To represent this information in visualization, I used a simple bar chart with a line overlay.
+The bars represent the Win/Loss ratio of the selected team, and the overlaying line represents the average.
+
+The chart changes based on the team selection and the time window selection.
+Upon selecting a different team, the bars of the chart changes based on the Win/Loss ratio of the selected team.
+This enables the user to grasp an idea about the team's overall performance against other major cricket-playing teams.
+
+### Team Strength
+For visualizing team strengths, I used a radial chart with both batting and bowling characteristics.
+The information in the chart gets updated upon changes to the selection of the team or the time window.
+
+In addition to a visualization on the team selected, I added another instance of the same chart for the opposition team selection. The opposition strength visualization changes based on the opposition team selection and the time window selection. As a result, the user can continuously compare the changes to team strength over different time frames.
+
+### Player Performance
+The player performance section provides information on the players and their contribution to the overall strength of the team reflected through a set of selected metrics. For player performance analysis for batsmen, I have used total runs, boundaries, ducks, and strike rate. Metrics for bowlers include maidens, runs, boundaries, and wickets.
+
+## 4. Design Decisions
+
+
+![](dashboard-concept.png)
+
+### Team Performance
+
+## 5. Development Process
+
+For the development, I followed the bottom-up approach, starting from data acquisition for individual elements.
+Then for each dataset gathered, I performed off-dashboard processing (preprocessing) to obtain the finalized CSV files.
+Then I used the CSV files as the data sources and created the individual visualization components.
+Before developing a visual element, I went through the existing visualization techniques in cricket on ESPN-Cricinfo, as a part of making the visual elements more welcoming to a user.
+As the final step, I merged the individual components to form the dashboard.
+
+The major downside to this approach was that It takes an entire process to realize the issues with the integration of components.
+For instance, the possible incompatibility between merging `d3` visualizations with `vega-lite`, and `vega` with `vega-lite` had a significant impact on the overall project.
+As a result of the incompatibilities, I had to develop the same visualization component in `d3`, `vega`, and using `vega-lite`.
+This me to discard the initial idea of providing a comparison of the strengths through a single visual element.
+Instead of it I had to use two wagon-wheel-like visualizations.
+As a result of the integration issue, I was not able to properly test or enhance any visualizations in the dashboard.
+
+The development of the components was the most time-consuming since I had to develop the same visualization several times due to the integration issues.
+Following is a rough estimation of the time spent on each activity.
+
+Activity  | Time (Hours)   
+--|---:|
+Data exploration (Data-world)                       |  1 |  
+Data exploration (ESPN-Cricinfo)                    |  2 |  
+Data acquisition, pre-processing (Python - Google-Colab)   |  6 |  
+Analyzing existing visualization elements (ESPN-Cricinfo)  |  1 |  
+Developing visualization components (Includes failed attempts / discarded components)                               |  12 |  
+In-dashboard processing                             |  6 |
+Integrations (Included failed attempts)             |  8 |  
+Testing & Improvements                              |  2 |  
+Documentation                                       |  5 |  
+**Total**                                           |  **43** |  
