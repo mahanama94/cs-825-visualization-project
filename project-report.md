@@ -150,10 +150,28 @@ The player performance section provides information on the players and their con
 ## 4. Design Decisions
 
 
-![](dashboard-concept.png)
-
 ### Team Performance
 
+
+### Team Strength
+
+|![](team-strength.jpg)|
+|:--:|
+|Team strength visualization   |
+
+
+### Player Performance
+
+### Layout
+|![](dashboard-concept.png)|
+|:--:|
+|   |
+
+### Control Elements
+
+<iframe width="100%" height="1270" frameborder="0"
+  src="https://observablehq.com/embed/@mahanama94/cricket-dashboard?cells=viewof+team%2CcricketDashboard%2Cviewof+yearRange%2Cviewof+opponent"></iframe>
+  
 ## 5. Development Process
 
 For the development, I followed the bottom-up approach, starting from data acquisition for individual elements.
