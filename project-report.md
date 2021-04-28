@@ -181,11 +181,27 @@ Then I placed the metrics in an opposing manner in the radial chart.
 |:--:|
 |Team strength visualization. Sectors on left side for batting, right side for bowling. Metrics M1 and M2 represents teams strength assessed through Lowest Score (LS). M1: Batting LS, M2: Bowling LS. |
 
+The users' familiarity with wagon-wheel charts will allow the users to easily decode the strengths and weaknesses.
 
 ### Player Performance
 
+I used a set of repeating bar charts for each player type with the length of bars in the x-axis representing the performance.
+For batsmen performance for the number of innings, batting runs, number of boundaries, number of ducks, and strike rate.
+For bowlers, number of innings, number of maidens, bowling runs, number of boundaries, and number of wickets.
+The selection of the player performance metrics was purely on speculation of a possible existence of a relationship between player performance metrics and team strength metrics.
+An important point to note here is that the player performance metrics are calculated based on the time frame selection.
+
+|![](batsmen-stats.png)|
+|:--:|
+| Repeating bar charts for top five batsmen in a team. |
+
 ### Layout
 |![](dashboard-concept.png)|
+|:--:|
+| Conceptual design of the dashboard highlighting possible association of metrics with barcharts. M1 can be associated with barchart B1, M2 with B2.|
+
+
+|![](dashboard-components.jpg)|
 |:--:|
 |   |
 
@@ -222,5 +238,5 @@ Developing visualization components (Includes failed attempts / discarded compon
 In-dashboard processing                             |  6 |
 Integrations (Included failed attempts)             |  8 |  
 Testing & Improvements                              |  2 |  
-Documentation                                       |  5 |  
-**Total**                                           |  **43** |  
+Documentation                                       |  9 |  
+**Total**                                           |  **4** |  
