@@ -70,7 +70,7 @@ In the dashboard, there are multiple data processing happening based on the time
 
 ### Data Description
 
-Team statistics for a team contains following features.
+#### Team Data
 
 | Feature               | Description|
 |--                     |--|
@@ -87,7 +87,7 @@ Team statistics for a team contains following features.
 
 *Normalzed values used
 
-Bowling statistics
+#### Bowling Data
 
 | Feature       | Description |
 |--             |--|
@@ -98,7 +98,7 @@ Bowling statistics
 | Maidens       | Number of maidens per inning  |
 | Boundaries    | Number of boundaries per inning  |
 
-Batting statistics
+#### Batting Data
 
 | Feature       | Description |
 |--             |--|
@@ -109,4 +109,21 @@ Batting statistics
 | SR            | Strike rate of batsman   |
 | Ducks         | Number of no score wickets  |
 
-*Note that the values are computed using weighted averaging across the selected tim frame*
+*Note that the values are computed using weighted averaging across the selected time frame*
+
+## 3. Visualizations
+
+Describe your visualization. Explain any interactive elements you employed. Address how the visualization addresses the questions you raised in the Introduction.
+
+Before developing the visualizations, I first broke down the requirements into three forms as
+1. Team performance comparison
+2. Team strength
+3. Player breakdown
+
+Based on the section breakdown, I started by creating visual elements for each form of requirement.
+
+In addition to the visual elements, the requirements also include selecting countries, selecting time ranges, and changing the opposition teams.
+For this purpose, I included three control elements in the dashboard.
+1. Selection of team - Drop down containing the list of teams in the dataset
+2. Selection of time window - A range slider with upper and lower bounds based on the maximum and minimum year in the dataset
+3. Selection of opposition - Drop down selection containing the list of teams except for the selected team
