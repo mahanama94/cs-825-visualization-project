@@ -249,7 +249,7 @@ Data acquisition, pre-processing (Python - Google-Colab)   |  6 |
 Analyzing existing visualization elements (ESPN-Cricinfo)  |  1 |  
 Developing visualization components (Includes failed attempts / discarded components)                               |  12 |  
 In-dashboard processing                             |  6 |
-Integrations (Included failed attempts)             |  8 |  
+Integrations (Includes failed attempts)             |  8 |  
 Testing & Improvements                              |  2 |  
 Documentation                                       |  9 |  
 **Total**                                           |  **43** |  
