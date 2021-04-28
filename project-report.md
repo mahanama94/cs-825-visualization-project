@@ -196,19 +196,32 @@ An important point to note here is that the player performance metrics are calcu
 | Repeating bar charts for top five batsmen in a team. |
 
 ### Layout
+
+The next critical decision was the decision on the layout of the visual elements.
+I decided to use either side of the team strength radial chart to place player performance charts, with the batsmen charts being on the side corresponding to the batting strengths of the team.
+In this manner, I expect the user to identify the key players contributing to different team strengths quickly.
+In an ideal scenario, the bar charts can be arranged such that player performance charts follow the order in the team strength radial chart as highlighted in the conceptual design.
+
 |![](dashboard-concept.png)|
 |:--:|
-| Conceptual design of the dashboard highlighting possible association of metrics with barcharts. M1 can be associated with barchart B1, M2 with B2.|
+| Conceptual design of the dashboard highlighting possible association of metrics with bar charts. M1 can be associated with bar chart B1, M2 with B2.|
 
+
+For the team Win/Loss summary illustration placement, I chose the space above the team and player performance charts.
 
 |![](dashboard-components.jpg)|
 |:--:|
-|   |
+| Finalized dashboard design. (1) Win/Loss ratio visualization. (2) Team strength with comparison. (3-a) Top five bowler performance. (3-b) Top five batsmen performance. |
 
 ### Control Elements
 
-<iframe width="100%" height="1270" frameborder="0"
-  src="https://observablehq.com/embed/@mahanama94/cricket-dashboard?cells=viewof+team%2CcricketDashboard%2Cviewof+yearRange%2Cviewof+opponent"></iframe>
+
+I used a separate input component outside the dashboard to perform the election of the team.
+Even though I had planned to use a slider on the Win/Loss illustration to select the time frame, I used a component outside the dashboard due to time constraints and unforeseen technical challenges.
+For this, I imported a range input with a lower bound.
+As the control for the opposition team selection, I used a drop-down selection containing all teams other than the selected team.
+
+
 
 ## 5. Development Process
 
@@ -239,4 +252,18 @@ In-dashboard processing                             |  6 |
 Integrations (Included failed attempts)             |  8 |  
 Testing & Improvements                              |  2 |  
 Documentation                                       |  9 |  
-**Total**                                           |  **4** |  
+**Total**                                           |  **43** |  
+
+
+## Links
+* Data-world cricket dataset: [https://data.world/cclayford/cricinfo-statsguru-data](https://data.world/cclayford/cricinfo-statsguru-data)
+* ESPN-Cricinfo stats: [https://stats.espncricinfo.com/ci/engine/stats/index.html](https://stats.espncricinfo.com/ci/engine/stats/index.html)
+* ESPN-Cricinfo: [https://www.espncricinfo.com/](https://www.espncricinfo.com/)
+
+## References
+
+- Range Slider: [https://observablehq.com/@mootari/range-slider](https://observablehq.com/@mootari/range-slider)
+- Vega-lite API docs: [https://vega.github.io/vega-lite-api/](https://vega.github.io/vega-lite-api/)
+- Vega-lite JS API docs: [https://vega.github.io/vega-lite-api/api/](https://vega.github.io/vega-lite-api/api/)
+- Vega Radar Chart: [https://vega.github.io/vega/examples/radar-chart/](https://vega.github.io/vega/examples/radar-chart/)
+- Vega-lite Radial Chart: [https://vega.github.io/vega-lite/examples/arc_radial.html](https://vega.github.io/vega-lite/examples/arc_radial.html)
