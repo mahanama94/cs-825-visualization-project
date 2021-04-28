@@ -151,13 +151,35 @@ The player performance section provides information on the players and their con
 
 
 ### Team Performance
-
+For visualizing the overall team performance, I used a bar chart where the height of the bar represents the Win/Loss ratio of the selected team in a specific year.
+Then I used color encoding in the bar chart to represent the years in the selection.
+In order to enable us to compare the Win/Loss ratio with the average Win/Loss ratio, I added a line chart layer to represent the average Win/Loss ratio.
+Since the Win/Loss ratio can have values on either side of the average Win/Loss ratio, the use of a bar chart can become problematic.
+For instance, if the average Win/Loss ratio (the layer above) is higher, then the bars of the layer above can cover the bars in the layer below.
 
 ### Team Strength
 
+I used a radial chart with eight sectors similar to the wagon-wheel charts used in cricket to represent the team strength.
+Similar to the wagon-wheel charts representing the strengths of a batsman in different regions of the cricket field, the team strength radial chart represents the team strength assessed through normalized metrics.
+Like the batsman wagon-wheel charts, I used fill-opacity encoding channel to represent the strength; higher fill opacity for the strengths and lower fill opacity for weaknesses.
+An important point to note here is the data preprocessing I performed to ensure that higher values represent strengths despite the metric being related to batting or bowling.
+
+
+|![](wagon-wheel-batsman.png)|
+|:--:|
+| Wagon-wheel chart representing batsman strengths. Note the color encoding channel used to represent the strongest area on the field. Source: ESPN-Cricinfo  |   
+
+Another design decision to consider was the placement of the radials.
+The normalized metrics used to represent the team strength has two forms of relationships among them.
+Firstly, the metrics can be divided into batting (offense) and bowling (defense).
+Secondly, each metric has a counter metric in the other category; the counter metric of batting RPO is the bowling RPO.
+I used these two forms of relationships for the placement of the radials.
+Firstly I divided the radial chart vertically into two main sectors and assigned them batting and bowling.
+Then I placed the metrics in an opposing manner in the radial chart.
+
 |![](team-strength.jpg)|
 |:--:|
-|Team strength visualization   |
+|Team strength visualization. Sectors on left side for batting, right side for bowling. Metrics M1 and M2 represents teams strength assessed through Lowest Score (LS). M1: Batting LS, M2: Bowling LS. |
 
 
 ### Player Performance
@@ -171,7 +193,7 @@ The player performance section provides information on the players and their con
 
 <iframe width="100%" height="1270" frameborder="0"
   src="https://observablehq.com/embed/@mahanama94/cricket-dashboard?cells=viewof+team%2CcricketDashboard%2Cviewof+yearRange%2Cviewof+opponent"></iframe>
-  
+
 ## 5. Development Process
 
 For the development, I followed the bottom-up approach, starting from data acquisition for individual elements.
